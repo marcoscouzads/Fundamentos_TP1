@@ -12,8 +12,6 @@ fun main() {
 
 //Inverter palavras
 fun qt2(element: List<Int>) {
-    println("Questão 2\n")
-
     val name = "INFNET"
     if (element.first() < element.last())
         println(name)
@@ -23,8 +21,6 @@ fun qt2(element: List<Int>) {
 
 //Maior na lista
 fun qt3(element: List<Int>) {
-    println("questão 3\n")
-
     var x = 0
 
     for (i in element) {
@@ -82,49 +78,42 @@ fun qt5(n: Int) {
 fun qt6(element: List<Int>) {
     //Crivo de Eratóstenes
     var listaPrimos = mutableListOf<Int>()
-    var listaPrimos1 = mutableListOf<Int>()
-    var listaPrimos2 = mutableListOf<Int>()
+    var listaEhPrimos = mutableListOf<Int>()
+    var listaNaoPrimos = mutableListOf<Int>()
 
     for (i in element) {
 
         if (ehPrimo(i)) {
             listaPrimos.add(1)
-            listaPrimos1.add(i)
+            listaEhPrimos.add(i)
         } else {
             listaPrimos.add(0)
-            listaPrimos2.add(i)
+            listaNaoPrimos.add(i)
 
         }
 
     }
     println("Lista de primos: $listaPrimos")
     println("lista d numeros: $element")
-    println("Lista de todos os primos: $listaPrimos1")
-    println("Lista de todos os  não primos: $listaPrimos2")
+    println("Lista de todos os primos: $listaEhPrimos")
+    println("Lista de todos os  não primos: $listaNaoPrimos")
 
 }
 
 fun ehPrimo(n: Int): Boolean {
     if (n % 2 == 0 && n != 2) {
-        println("não é primo $n")
         return false
     } else if (n == 1) {
-        println("não é primo $n")
         return false
     } else if (n % 3 == 0 && n != 3) {
-        println("não é primo $n")
         return false
     } else if (n % 5 == 0 && n != 5) {
-        println("não é primo $n")
         return false
     } else if (n % 7 == 0 && n != 7) {
-        println("não é primo $n")
         return false
     } else if (n % 9 == 0 && n != 9) {
-        println("não é primo $n")
         return false
     }
-    println("é primo $n")
     return true
 }
 
